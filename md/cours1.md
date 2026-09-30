@@ -13,6 +13,17 @@ L'objectif de ce cours n'est cependant pas d'étudier l'infrastructure de React 
 
 - construire une application selon un **modèle fonctionnel** ;
 - connecter cette application à des données accessibles par **GraphQL**.
+- maîtriser l'asynchrone
+
+## Principes
+
+Contrairement à un programme classique, notre code ne contrôle pas la boucle d'exécution : c'est React qui appelle nos composants et nos fonctions lorsque cela est nécessaire. Ce principe est appelé *inversion de contrôle*.
+
+Les composants React sont les fonctions que nous fournissons au framework pour décrire l'interface. À partir des données qu'ils reçoivent (*props*) et de l'état fourni par React, ils retournent une description de la vue en JSX. Lorsque l'état change, React rappelle les composants concernés afin d'obtenir une nouvelle description de l'interface.
+
+1. React met à disposition un service de dispatch pour modifier l'état
+1. ce n'est pas le code qui modifie l'état
+1. c'est l'utilisation d'un dispatch qui déclenche la modification d'état
 
 ## Une interface est une fonction
 

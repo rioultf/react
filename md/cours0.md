@@ -17,7 +17,17 @@ author: Cours de François Rioult <francois.rioult@unicaen.fr>
 * si vous travaillez sur le NTFS (`~/.Documents/...`), les liens symboliques sont interdits. Utiliser le cannevas fourni pour démarrer, qui est suffisant en terme de module
 
 
+# Mauvaises habitudes
 
+* bidouiller avec `async` et `await` : ce n'est pas utile avec React et on utiliser des promesses pour les services asynchrones
+
+```js
+console.log(todos);  // ancien état
+dispatch({ type: "todoDeleted", id: 1 });
+console.log(todos);  // toujours l'ancien état
+
+await dispatch(action); // ne sert pas à attendre le nouveau rendu
+```
 
 # Code pourri
 
