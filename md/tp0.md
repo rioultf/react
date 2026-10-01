@@ -39,7 +39,7 @@ du -hsx
 
 # Initialisation d'un projet `React Native`
 
-* télécharger l'[archive du projet avec le dossier node_modules dont les liens symboliques sont déférencés](https://ecampus.unicaen.fr/mod/resource/view.php?id=994363)
+* télécharger l'[archive du projet avec le dossier node_modules dont les liens symboliques sont déférencés](https://ecampus-vert.unicaen.fr/mod/resource/view.php?id=131365)
 * la désarchiver dans `~/Documents`
 * renommer le dossier selon votre choix
 
