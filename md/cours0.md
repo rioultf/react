@@ -15,6 +15,7 @@ author: Cours de François Rioult <francois.rioult@unicaen.fr>
 
 * commencez par vérifier la console du serveur
 * si vous travaillez sur le NTFS (`~/.Documents/...`), les liens symboliques sont interdits. Utiliser le cannevas fourni pour démarrer, qui est suffisant en terme de module
+* si vous avez ajouté un fichier, redémarrez le serveur, le bundle doit être reconstruit
 
 
 # Mauvaises habitudes

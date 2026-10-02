@@ -45,11 +45,15 @@ du -hsx
 
 # Démarrage du projet
 
-Une fois installé, il suffit de faire `npm run start` ou `npx expo`. Un serveur `expo` est lancé, vous permettant d'ouvrir l'émulateur web\ :
+Une fois installé, le serveur peut être lancé avec :
 
-* appuyer sur `w`
-* le projet est alors compilé avec `webpack`
-* le navigateur est ouvert pour pointer sur <http://localhost:19006/>
+    node node_modules/expo/bin/cli start --web
+
+Cette commande est l'équivalent pratique de `npx expo start --web`. `npx` recherche normalement l'exécutable `expo` installé dans le projet et le lance. Ici, on appelle directement avec Node le script du CLI Expo, afin d'éviter les liens symboliques utilisés dans `node_modules/.bin`.
+
+Un serveur `expo` est lancé, vous permettant d'ouvrir l'émulateur web\ :
+
+* le navigateur est ouvert pour pointer sur <http://localhost:8081/>
 * en cas de modification d'un fichier source, le projet est recompilé
 
 En cas d'erreur de compilation, un message est affiché dans la console du compilateur, c'est-à-dire dans le terminal qui a lancé la compilation.
