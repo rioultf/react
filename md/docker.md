@@ -6,6 +6,8 @@ title: React Native - Séance 0
 subtitle: Installation en local d'une API Neo4j - GraphQL
 ---
 
+* Pré-recquis : le TP du [Cours sur Neo4j + GraphQL](https://ecampus-vert.unicaen.fr/mod/page/view.php?id=121393)
+
 # Installation en local d'une API Neo4j - GraphQL
 
 La réalisation de notre projet React passe par la mise à disposition d'un endpoint base de données.
