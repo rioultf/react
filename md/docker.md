@@ -20,6 +20,30 @@ Ce choix technologique permet une grande portabilité :
 * VDI Unicaen
 * Linux / Windows
 
+# Modèle
+
+```mermaid
+classDiagram
+    class User {
+        +ID id
+        +String username
+    }
+
+    class TodoList {
+        +ID id
+        +String title
+    }
+
+    class TodoItem {
+        +ID id
+        +String content
+        +Boolean done = false
+    }
+
+    User "1" -- "0..*" TodoList : possède
+    TodoList "1" -- "0..*" TodoItem : contient
+```
+
 ## Containers `docker`
 
 Nous utilisons `docker`, une technologie de virtualisation. La notion
