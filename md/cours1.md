@@ -1,5 +1,6 @@
 ---
-title: React Native - Séance 1
+title: React Native
+subtitle: Séance 1
 author: Cours de François Rioult <francois.rioult@unicaen.fr>
 ---
 
