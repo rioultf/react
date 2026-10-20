@@ -531,3 +531,23 @@ if (!body.errors && typeof token === "string" && token.length > 0) {
 
 * ce script enregistre le token dans l'environnement
 * dans la section `Authorization` de la collection, choisir *Bearer Token* et saisir `{{token}}` dans le champ
+
+# Test de l'API par Node
+
+Les scripts du dossier `js` 
+
+
+
+$ API_USERNAME=rioultf API_PASSWORD=rootroot1234 node index.js
+Liste créée : {
+  id: '9e301f0e-18be-4109-b1b4-055e0a7722e7',
+  title: 'Liste pour rioultf',
+  owner: [
+    { id: 'e7debaa4-04b9-43f7-ae97-2fd65660ce36', username: 'rioultf' }
+  ]
+}
+Tâche créée : {
+  id: 'a2a6ec78-1890-43c7-99e8-c12fae490ed7',
+  content: 'Todo item 1',
+  done: false
+}
