@@ -480,14 +480,14 @@ printf 'NEO4J_PASSWORD=coursneo4j\nJWT_SECRET=%s\n' "$(openssl rand -hex 32)" > 
 
 
 
-# Configuration de Postman
+### Utilisation de Postman avec JWT
 
-## Quels trucs pour Postman
+#### Quels trucs pour Postman
 
 * penser à sauvegarder les requêtes (icône *save* à côté du fil d'Ariane)
 * la requête doit être émise en `POST`
 
-## Mise en place
+#### Mise en place
 
 * créer une *collection* et une requête de `signIn`
 * définir un *environnement* de la collection, définir les variable `username` et `password`
@@ -532,12 +532,13 @@ if (!body.errors && typeof token === "string" && token.length > 0) {
 * ce script enregistre le token dans l'environnement
 * dans la section `Authorization` de la collection, choisir *Bearer Token* et saisir `{{token}}` dans le champ
 
-# Test de l'API par Node
+## Test de l'API par Node
 
-Les scripts du dossier `js` 
+Les scripts du dossier `js` utilise tous la même promesse `graphqlRequest` pour interroger la base de données. Ces scripts peuvent être intégrés dans une appli React.
 
+En console, on lance le script qui crée une todoList et un TodoItem en précisant les ccordonéées du compte :
 
-
+```bash
 $ API_USERNAME=rioultf API_PASSWORD=rootroot1234 node index.js
 Liste créée : {
   id: '9e301f0e-18be-4109-b1b4-055e0a7722e7',
@@ -551,3 +552,15 @@ Tâche créée : {
   content: 'Todo item 1',
   done: false
 }
+```
+
+# Création de l'utilisateur `admin`
+
+* effectuer un `signUp` au nom de l'admin
+* vérifier que le jeton le répertorie dans le groupe `user`
+* ouvrez l'interface de `Neo4j` à <http://localhost:7474> (login `neo4j`, password `coursneo4j`)
+* exécuter la requête suivante :
+
+    MATCH (u:User {username: "admin"})
+    SET u.roles = ["user", "admin"]
+    RETURN u.id, u.username, u.roles;
