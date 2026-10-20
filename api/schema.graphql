@@ -1,0 +1,100 @@
+type JWT @jwt {
+  roles: [String!]!
+}
+
+type TodoItem @node @authentication {
+  id: ID! @id
+  content: String
+  done: Boolean! @default(value: false)
+
+  belongsTo: [TodoList!]!
+    @relationship(type: "BELONGS_TO", direction: OUT)
+}
+
+extend type TodoItem @authorization(
+  validate: [
+    {
+      when: [BEFORE, AFTER]
+      where: {
+        jwt: { roles: { includes: "admin" } }
+      }
+    }
+    {
+      when: [BEFORE, AFTER]
+      where: {
+        node: {
+          belongsTo: {
+            some: {
+              owner: {
+                some: { id: { eq: "$jwt.sub" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+)
+
+type TodoList @node @authentication {
+  id: ID! @id
+  title: String
+
+  contains: [TodoItem!]!
+    @relationship(type: "BELONGS_TO", direction: IN)
+
+  owner: [User!]!
+    @relationship(type: "OWNED_BY", direction: OUT)
+}
+
+extend type TodoList @authorization(
+  validate: [
+    {
+      when: [BEFORE, AFTER]
+      where: {
+        jwt: { roles: { includes: "admin" } }
+      }
+    }
+    {
+      when: [BEFORE, AFTER]
+      where: {
+        node: {
+          owner: {
+            some: { id: { eq: "$jwt.sub" } }
+          }
+        }
+      }
+    }
+  ]
+)
+
+type User
+  @node
+  @authentication
+  @mutation(operations: [])
+{
+  id: ID! @id
+  username: String!
+}
+
+extend type User @authorization(
+  validate: [
+    {
+      when: [BEFORE, AFTER]
+      where: {
+        jwt: { roles: { includes: "admin" } }
+      }
+    }
+    {
+      when: [BEFORE, AFTER]
+      where: {
+        node: { id: { eq: "$jwt.sub" } }
+      }
+    }
+  ]
+)
+
+type Mutation {
+  signUp(username: String!, password: String!): String!
+  signIn(username: String!, password: String!): String!
+}

@@ -1,0 +1,16 @@
+{
+  "name": "neo4j-todo-graphql-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "@neo4j/graphql": "^7.0.0",
+    "graphql": "^16.11.0",
+    "neo4j-driver": "^5.28.0",
+    "bcryptjs": "^3.0.0",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
