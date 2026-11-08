@@ -18,6 +18,12 @@ author: Cours de François Rioult <francois.rioult@unicaen.fr>
 1. [Cours 2](md/cours2.md)
 1. [TP 2: Mise en place de signIn / signUp](md/tp2.md)
 
+# Navigation, modèles et API GraphQL
+
+1. [Cours 3](md/cours3.md)
+1. [TP 3: Navigation dynamique et connexion à l'API](md/tp3.md)
+]
+
 ## Annexes
 
 

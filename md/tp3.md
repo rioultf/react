@@ -2,7 +2,7 @@
 author:
 - François Rioult
 lang: fr
-title: Mise en place de signIn / signUp
+title: Navigation dynamique et connexion à l'API
 ---
 
 # Connexion à l'API
