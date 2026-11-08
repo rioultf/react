@@ -295,9 +295,7 @@ const [items, dispatch] = useReducer(todoItemsReducer, initialTodoItems);
 
 Un reducer calcule le prochain état à partir de l'état courant et d'une action :
 
-\[
-M_{t+1} = R(M_t, a_t)
-\]
+$M_{t+1} = R(M_t, a_t)$
 
 Il n'effectue aucune requête réseau. La mutation distante est déclenchée par le gestionnaire d'événement ; l'action locale suit la confirmation du serveur :
 
