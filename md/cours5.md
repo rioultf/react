@@ -1,16 +1,7 @@
 ---
 title: React Native - Séance 5
-author: Cours de François Rioult <francois.rioult@unicaen.fr>
+author: François Rioult
 ---
-
-# Résumé de la séance précédente
-
-Nous avons découvert :
-
-* comment organiser la navigation entre les écrans avec un menu (`Tab.Navigator`) ;
-* comment proposer une navigation conditionnelle, par exemple selon que l'utilisateur est connecté ou non ;
-* le principe des jetons JWT (*JSON Web Token*) utilisés pour l'authentification auprès d'une API. Ces jetons contiennent des informations sur l'utilisateur, notamment son identifiant. Ils sont signés par le serveur, ce qui permet de vérifier leur intégrité et leur authenticité ;
-* comment réaliser une première connexion à l'API GraphQL : l'authentification renvoie un jeton JWT. L'appel est asynchrone et retourne une *promesse*, dont on traite le résultat avec `.then()` et les erreurs avec `.catch()`.
 
 # Conception générale d'une application React
 
