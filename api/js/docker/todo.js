@@ -1,4 +1,4 @@
-import { graphqlRequest } from "./graphql.js";
+import { graphqlRequest } from "../unicaen/graphql.js";
 
 const CREATE_TODO = `
   mutation CreateTodoItems($input: [TodoItemCreateInput!]!) {
